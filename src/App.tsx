@@ -14,22 +14,28 @@ import TermsOfService from "./TermsOfService";
 const IMAGES = {
   logo: `${import.meta.env.BASE_URL}minaLogo.png`,
   logoWhite: `${import.meta.env.BASE_URL}LogoWhite.png`,
-  hero: `${import.meta.env.BASE_URL}hero002.jpg`,
-  // hero: `${import.meta.env.BASE_URL}hero001.png`,
 
-  // marketplace: `${import.meta.env.BASE_URL}marketplace001.png`,
-  // concierge: `${import.meta.env.BASE_URL}concierge001.png`,
-  // circle: `${import.meta.env.BASE_URL}circle001.png`,
+  // --- version1 ----
+  hero: `${import.meta.env.BASE_URL}hero002.jpg`,
 
   marketplace: `${import.meta.env.BASE_URL}hero3.png`,
   concierge: `${import.meta.env.BASE_URL}hero3.png`,
   circle: `${import.meta.env.BASE_URL}hero3.png`,
 
   milestone: `${import.meta.env.BASE_URL}highChair.jpg`,
-  // community: `${import.meta.env.BASE_URL}community001.png`,
   community: `${import.meta.env.BASE_URL}community002.jpg`,
-
   conciergeHighlight: `${import.meta.env.BASE_URL}hero001.png`,
+
+  // --- version2 ----
+  // hero: `${import.meta.env.BASE_URL}hero001.png`,
+
+  // marketplace: `${import.meta.env.BASE_URL}marketplace001.png`,
+  // concierge: `${import.meta.env.BASE_URL}concierge001.png`,
+  // circle: `${import.meta.env.BASE_URL}circle001.png`,
+
+  // milestone: `${import.meta.env.BASE_URL}highChair.jpg`,
+  // community: `${import.meta.env.BASE_URL}community001.png`,
+
   // conciergeHighlight: `${import.meta.env.BASE_URL}community002.jpg`,
 
   appStoreBadge:
@@ -298,6 +304,7 @@ const Hero = () => (
             alt="MINA Baby Gear"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             referrerPolicy="no-referrer"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent"></div>
         </div>
@@ -558,6 +565,7 @@ const System = () => {
                     alt={card.title}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full bg-sage/5 flex items-center justify-center">
@@ -660,6 +668,7 @@ const Lifecycle = () => (
                       src={IMAGES.milestone}
                       alt="High Chair"
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div>
@@ -1019,6 +1028,7 @@ const Community = () => {
                 alt="Flat Illustration"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-sage/10 mix-blend-multiply"></div>
             </motion.div>
@@ -1159,6 +1169,7 @@ const ConciergeHighlight = () => (
             alt="Concierge Service"
             className="w-full h-full object-cover opacity-80"
             referrerPolicy="no-referrer"
+            loading="lazy"
           />
         </motion.div>
       </div>
@@ -1418,6 +1429,7 @@ const FinalCTA = () => (
                 alt="Download on the App Store"
                 className="h-12 sm:h-16 w-auto"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
             </a>
           </motion.div>
