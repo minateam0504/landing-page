@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/mina-landingPage-testing2/",
+  base: "/landing-page/",
   // base: "/",
   plugins: [react(), tailwindcss()],
 });

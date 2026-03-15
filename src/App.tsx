@@ -1597,7 +1597,8 @@ export default function App() {
 
   return (
     // <Router basename="/">
-    <Router basename="/mina-landingPage-testing2/">
+    // <Router basename="/mina-landingPage-testing2/">
+    <Router basename="/">
       <ScrollToTop />
       <div className="min-h-screen selection:bg-sage/20 selection:text-sage">
         <Navbar />
