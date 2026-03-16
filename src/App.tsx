@@ -18,9 +18,9 @@ const IMAGES = {
   // --- version1 ----
   hero: `${import.meta.env.BASE_URL}hero002.jpg`,
 
-  marketplace: `${import.meta.env.BASE_URL}hero3.png`,
-  concierge: `${import.meta.env.BASE_URL}hero3.png`,
-  circle: `${import.meta.env.BASE_URL}hero3.png`,
+  marketplace: `${import.meta.env.BASE_URL}marketplace.png`,
+  concierge: `${import.meta.env.BASE_URL}concierge.png`,
+  circle: `${import.meta.env.BASE_URL}circle.png`,
 
   milestone: `${import.meta.env.BASE_URL}highChair.jpg`,
   community: `${import.meta.env.BASE_URL}community002.jpg`,
@@ -908,6 +908,18 @@ const Community = () => {
   const [activeQuote, setActiveQuote] = useState(0);
   const quotes = [
     {
+      text: "We were gifted so many baby items that we barely used. I hate the idea of them ending up in a landfill, and charities often can’t accept most of them. A service like this is such an amazing idea.",
+      author: "Morgan, Mom",
+    },
+    {
+      text: "I have a lot of baby things to pass on, but coordinating pickups on Facebook Marketplace is exhausting. I’ve been ghosted so many times it’s just not worth the effort anymore.",
+      author: "Mom of an infant",
+    },
+    {
+      text: "I hate throwing away perfectly good baby items, but sometimes I have to because our house is small and we need the space.",
+      author: "Parent of a newborn",
+    },
+    {
       text: "MINA really resonates with me. As a mom of a 7-month-old, I love the idea and would be excited to see something like this for parents.",
       author: "Rebecca, Mom of a 7-month-old",
     },
@@ -918,26 +930,6 @@ const Community = () => {
     {
       text: "My first selling experience was very positive. Listing items was incredibly easy, and I especially loved the AI feature that helps tailor item descriptions. The flow felt intuitive and seamless.",
       author: "Early MINA Seller, San Francisco",
-    },
-    {
-      text: "MINA made clearing out the nursery so stress-free. The concierge service is a game changer for busy parents.",
-      author: "Sarah, Mission Bay",
-    },
-    {
-      text: "I found a beautiful Snoo for half the price. Love the curated feel of the marketplace.",
-      author: "David, Noe Valley",
-    },
-    {
-      text: "The Circle swap events are my favorite way to meet other parents in the neighborhood.",
-      author: "Emily, Richmond District",
-    },
-    {
-      text: "Finally, a sustainable way to handle the constant cycle of baby gear. MINA is exactly what SF needed.",
-      author: "Michael, Castro",
-    },
-    {
-      text: "The quality control is what sets MINA apart. I trust every item I buy here.",
-      author: "Jessica, Mission Bay",
     },
   ];
 
@@ -1444,9 +1436,10 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => (
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-20">
       <div className="col-span-2">
         <div className="flex items-center gap-2 mb-8">
-          <div className="w-10 h-10 bg-sage rounded-full flex items-center justify-center text-white font-serif italic text-xl">
-            M
+          <div className="w-10 h-10 bg-sage rounded-full flex items-center justify-center text-white font-serif italic text-xl ps-1">
+            <img src="logoWhite.png" alt="" />
           </div>
+
           <span className="text-3xl font-serif tracking-tight font-bold">
             MINA
           </span>
@@ -1539,7 +1532,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => (
     </div>
 
     <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-white/40 text-sm tracking-widest uppercase">
-      <p>© 2026 MINA APP. ALL RIGHTS RESERVED.</p>
+      <p>© 2026 MINA AI. ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
 );
