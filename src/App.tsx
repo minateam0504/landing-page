@@ -61,10 +61,18 @@ export const IMAGES = {
 };
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 
@@ -98,6 +106,7 @@ const FloatingDecoration = ({
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -112,6 +121,24 @@ const Navbar = () => {
     { name: "Events", href: "/#events" },
     { name: "About", href: "/#about" },
   ];
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (href.startsWith("/#")) {
+      const id = href.substring(2);
+      if (location.pathname === "/") {
+        const element = document.getElementById(id);
+        if (element) {
+          e.preventDefault();
+          element.scrollIntoView({ behavior: "smooth" });
+          if (mobileMenuOpen) setMobileMenuOpen(false);
+        }
+      }
+    }
+    if (mobileMenuOpen) setMobileMenuOpen(false);
+  };
 
   return (
     <nav
@@ -143,6 +170,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-medium hover:text-sage transition-colors uppercase tracking-widest"
             >
               {link.name}
@@ -183,7 +211,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-4xl font-serif"
                 >
                   {link.name}
