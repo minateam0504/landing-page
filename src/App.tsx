@@ -34,7 +34,7 @@ export const IMAGES = {
   logoWhite: `${import.meta.env.BASE_URL}logoWhite.png`,
 
   // --- version1 ----
-  hero: `${import.meta.env.BASE_URL}hero002.jpg`,
+  hero: `${import.meta.env.BASE_URL}hero002-2.jpg`,
 
   marketplace: `${import.meta.env.BASE_URL}marketplace.png`,
   concierge: `${import.meta.env.BASE_URL}concierge.png`,
