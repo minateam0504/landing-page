@@ -151,6 +151,7 @@ const MinaCircle = () => {
                   alt="Baby toys"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-cream p-8 rounded-[2rem] shadow-xl max-w-xs border border-sage/10">
@@ -311,6 +312,7 @@ const MinaCircle = () => {
                     alt="Baby room"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                 </motion.div>
                 <motion.div
@@ -325,6 +327,7 @@ const MinaCircle = () => {
                     alt="Baby shoes"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                 </motion.div>
               </div>

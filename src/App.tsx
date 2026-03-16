@@ -1521,10 +1521,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => (
             </a>
           </li>
           <li>
-            <Link
-              to="/mina-circle"
-              className="hover:text-white transition-colors"
-            >
+            <Link to="/mina-circle" className="hover:text- transition-colors">
               MINA Circle
             </Link>
           </li>
