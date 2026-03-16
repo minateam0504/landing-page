@@ -140,13 +140,13 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-sm font-medium hover:text-sage transition-colors uppercase tracking-widest"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <a
             href="https://shop.getmina.app/"
@@ -180,14 +180,14 @@ const Navbar = () => {
             </div>
             <div className="flex flex-col gap-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-4xl font-serif"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <a
                 href="https://shop.getmina.app/"
@@ -1521,7 +1521,10 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => (
             </a>
           </li>
           <li>
-            <Link to="/mina-circle" className="hover:text- transition-colors">
+            <Link
+              to="/mina-circle"
+              className="hover:text-white transition-colors"
+            >
               MINA Circle
             </Link>
           </li>
