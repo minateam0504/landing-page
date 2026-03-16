@@ -7,13 +7,31 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
+import {
+  ShoppingBag,
+  Users,
+  Truck,
+  ArrowRight,
+  ChevronRight,
+  CheckCircle2,
+  Menu,
+  X,
+  Instagram as InstagramIcon,
+  Mail,
+  MapPin,
+  Heart,
+  Sparkles,
+  Baby,
+  RefreshCw,
+} from "lucide-react";
 import PrivacyPolicy from "./PrivacyPolicy";
 import TermsOfService from "./TermsOfService";
+import MinaCircle from "./MinaCircle";
 
 // Centralized Image Assets
-const IMAGES = {
+export const IMAGES = {
   logo: `${import.meta.env.BASE_URL}minaLogo.png`,
-  logoWhite: `${import.meta.env.BASE_URL}LogoWhite.png`,
+  logoWhite: `${import.meta.env.BASE_URL}logoWhite.png`,
 
   // --- version1 ----
   hero: `${import.meta.env.BASE_URL}hero002.jpg`,
@@ -49,23 +67,6 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 };
-import {
-  ShoppingBag,
-  Users,
-  Truck,
-  ArrowRight,
-  ChevronRight,
-  CheckCircle2,
-  Menu,
-  X,
-  Instagram as InstagramIcon,
-  Mail,
-  MapPin,
-  Heart,
-  Sparkles,
-  Baby,
-  RefreshCw,
-} from "lucide-react";
 
 const FloatingDecoration = ({
   icon,
@@ -105,11 +106,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Marketplace", href: "#marketplace" },
-    { name: "Concierge", href: "#concierge" },
-    { name: "Circle", href: "#circle" },
-    { name: "Events", href: "#events" },
-    { name: "About", href: "#about" },
+    { name: "Marketplace", href: "/#marketplace" },
+    { name: "Concierge", href: "/#concierge" },
+    { name: "Circle", href: "/mina-circle" },
+    { name: "Events", href: "/#events" },
+    { name: "About", href: "/#about" },
   ];
 
   return (
@@ -584,18 +585,32 @@ const System = () => {
                   size: 28,
                 })}
               </motion.div>
-              <h3 className="text-2xl sm:text-3xl font-serif mb-4 group-hover:text-sage transition-colors">
+              <h3 className="text-2xl sm:text-3xl font-serif mb-4 group-hover:text-sage transition-colors flex items-center gap-3">
                 {card.title}
+                {card.id === "circle" && (
+                  <span className="bg-terracotta text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest shadow-sm">
+                    Coming Soon
+                  </span>
+                )}
               </h3>
               <p className="text-base sm:text-lg text-ink/60 mb-8 leading-relaxed font-light">
                 {card.desc}
               </p>
-              <a
-                href="https://shop.getmina.app/"
-                className="inline-flex items-center gap-2 text-sage font-bold group-hover:gap-4 transition-all text-sm sm:text-base"
-              >
-                Learn more <ChevronRight size={20} />
-              </a>
+              {card.id === "circle" ? (
+                <Link
+                  to="/mina-circle"
+                  className="inline-flex items-center gap-2 text-sage font-bold group-hover:gap-4 transition-all text-sm sm:text-base"
+                >
+                  Learn more <ChevronRight size={20} />
+                </Link>
+              ) : (
+                <a
+                  href="https://shop.getmina.app/"
+                  className="inline-flex items-center gap-2 text-sage font-bold group-hover:gap-4 transition-all text-sm sm:text-base"
+                >
+                  Learn more <ChevronRight size={20} />
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
@@ -742,14 +757,15 @@ const Lifecycle = () => (
           Mina AI copilot
         </div>
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-serif mb-8 leading-tight">
-          Stay ahead of baby milestones.
+          Stay ahead of baby milestones.{" "}
         </h2>
         <p className="text-lg sm:text-xl lg:text-2xl text-ink/70 mb-10 leading-relaxed font-light">
           MINA is lifecycle infrastructure. Our AI copilot predicts what you'll
           need next and what you're ready to pass on, so you're never stuck with
           gear you don't need.
         </p>
-        <motion.a
+
+        {/* <motion.a
           whileHover={{ x: 10 }}
           href="https://shop.getmina.app/"
           target="_blank"
@@ -757,7 +773,10 @@ const Lifecycle = () => (
           className="text-sage font-bold flex items-center gap-3 text-lg sm:text-xl transition-all"
         >
           Learn about Lifecycle Intelligence <ArrowRight size={24} />
-        </motion.a>
+        </motion.a> */}
+        <div className="inline-flex items-center gap-3 bg-terracotta/10 text-terracotta px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-terracotta/20">
+          Lifecycle Intelligence — Coming Soon
+        </div>
       </motion.div>
     </div>
   </section>
@@ -1436,8 +1455,19 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => (
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-20">
       <div className="col-span-2">
         <div className="flex items-center gap-2 mb-8">
+          {/* <Link to="/">
+            <img
+              src={IMAGES.logoWhite}
+              alt="MINA Logo"
+              className="w-32 h-auto"
+            />
+          </Link> */}
           <div className="w-10 h-10 bg-sage rounded-full flex items-center justify-center text-white font-serif italic text-xl ps-1">
-            <img src="logoWhite.png" alt="" />
+            <img
+              src={IMAGES.logoWhite}
+              alt="MINA Logo"
+              className="w-32 h-auto"
+            />
           </div>
 
           <span className="text-3xl font-serif tracking-tight font-bold">
@@ -1471,26 +1501,32 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => (
         <ul className="space-y-4 text-white/60 font-light">
           <li>
             <a
-              href="#marketplace"
+              href="/#marketplace"
               className="hover:text-white transition-colors"
             >
               Marketplace
             </a>
           </li>
           <li>
-            <a href="#concierge" className="hover:text-white transition-colors">
+            <a
+              href="/#concierge"
+              className="hover:text-white transition-colors"
+            >
               Concierge
             </a>
           </li>
           <li>
-            <a href="#events" className="hover:text-white transition-colors">
+            <a href="/#events" className="hover:text-white transition-colors">
               Events
             </a>
           </li>
           <li>
-            <a href="#circle" className="hover:text-white transition-colors">
+            <Link
+              to="/mina-circle"
+              className="hover:text-white transition-colors"
+            >
               MINA Circle
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -1601,8 +1637,6 @@ export default function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
-    // <Router basename="/">
-    // <Router basename="/mina-landingPage-testing2/">
     <Router basename="/">
       <ScrollToTop />
       <div className="min-h-screen selection:bg-sage/20 selection:text-sage">
@@ -1611,6 +1645,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/mina-circle" element={<MinaCircle />} />
         </Routes>
         <Footer onContactClick={() => setIsContactModalOpen(true)} />
 
