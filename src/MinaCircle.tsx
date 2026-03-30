@@ -53,14 +53,14 @@ const MinaCircle = () => {
               <div className="inline-block bg-sage/10 text-sage px-6 py-2 rounded-full text-sm font-bold uppercase tracking-[0.2em]">
                 Community Gifting
               </div>
-              <motion.div
+              {/* <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, type: "spring" }}
                 className="bg-terracotta text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg"
               >
                 Coming Soon
-              </motion.div>
+              </motion.div> */}
             </div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif mb-8 leading-none tracking-tight">
               MINA <span className="italic text-sage">Circle</span>

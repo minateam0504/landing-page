@@ -615,11 +615,11 @@ const System = () => {
               </motion.div>
               <h3 className="text-2xl sm:text-3xl font-serif mb-4 group-hover:text-sage transition-colors flex items-center gap-3">
                 {card.title}
-                {card.id === "circle" && (
+                {/* {card.id === "circle" && (
                   <span className="bg-terracotta text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest shadow-sm">
                     Coming Soon
                   </span>
-                )}
+                )} */}
               </h3>
               <p className="text-base sm:text-lg text-ink/60 mb-8 leading-relaxed font-light">
                 {card.desc}
