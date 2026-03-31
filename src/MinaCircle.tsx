@@ -355,8 +355,16 @@ const MinaCircle = () => {
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://shop.getmina.app/"
+            href="https://shop.getmina.app/homepage/mina-circle"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-sage text-white px-10 py-4 rounded-full font-bold hover:bg-olive transition-all"
+          >
+            Try Circle
+          </a>
+          <a
+            href="https://shop.getmina.app/"
+            className="border border-sage text-sage px-10 py-4 rounded-full font-bold hover:bg-sage hover:text-white transition-all"
           >
             Visit Marketplace
           </a>

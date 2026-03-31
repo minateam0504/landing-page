@@ -625,12 +625,14 @@ const System = () => {
                 {card.desc}
               </p>
               {card.id === "circle" ? (
-                <Link
-                  to="/mina-circle"
+                <a
+                  href="https://shop.getmina.app/homepage/mina-circle"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sage font-bold group-hover:gap-4 transition-all text-sm sm:text-base"
                 >
                   Learn more <ChevronRight size={20} />
-                </Link>
+                </a>
               ) : (
                 <a
                   href="https://shop.getmina.app/"
@@ -1267,7 +1269,7 @@ const Events = () => (
         <motion.a
           whileHover={{ scale: 1.05, backgroundColor: "#5A5A40" }}
           whileTap={{ scale: 0.95 }}
-          href="https://shop.getmina.app/"
+          href="https://shop.getmina.app/homepage/events"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-sage text-white px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl transition-all shadow-xl inline-block"
